@@ -1,31 +1,30 @@
-package tetes;
+import java.util.Scanner;
 
-public class teste {
+public class numeroPrimo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		public int count1=0;
-		int x = 3;
+        // TODO code application logic here
+        Scanner scan = new Scanner(System.in);
 
-		primo(x);
+        System.out.println("Digite um número para verificar se é número primo:");
+        int read = scan.nextInt();
+        int count = 0;
 
-	}
+        for (int i = 1; i <= read; i++) {
 
-	public static int primo(int x) {
-		int count1=0;
-		
-		for (int i= 2; i< x; i++) {
-			if  (i/2 == 0) { 
-				int count1++;
-			}
-			if (x/2 == 1) {
-				int count2=count2++;
-			System.out.println("O n�mero x: " + x + " n�o � primo");
-		}
-			System.out.println("O n�mero x: " + x + "� primo");
-		}	
-	return x;	
-	}
+            if (read % i == 0) {
+                count++; //contar quantas vezes o resto da divisão é 0;
+            }
+
+        }
+        if (count == 2)//se count for 2 quer dizer que o número é primo,
+        {              //pois só houve resto da divisão "0" em duas ocasiões,divisão por ele mesmo e por 1
+            System.out.println(" O número " + read + " é primo ");
+        } else {
+            System.out.println(" O número " + read + " não é primo ");
+        }
+
+    }
+
 
 }
